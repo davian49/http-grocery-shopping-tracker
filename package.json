@@ -1,0 +1,15 @@
+{
+  "name": "http-grocery-shopping-tracker",
+  "version": "1.0.0",
+  "description": " HTTP server that will process HTTP requests for the following operations: adding a grocery item (name, quantity, price) to a list, viewing all items in the list, saving the list to a file, and reading from a file to a list.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Davian C.",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
