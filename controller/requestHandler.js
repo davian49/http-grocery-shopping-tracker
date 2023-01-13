@@ -13,7 +13,7 @@ const requestHandler = (req, res) => {
                 let parsedGroceryItem = JSON.parse(body);
                 if(validateNewGroceryItem(parsedGroceryItem)){
                     groceryItemDAO.insertNewGroceryItem(parsedGroceryItem)
-                    res.setHeader('Content-Type', 'text/html');
+                    res.setHeader('Content-Type', 'application/json');
                     res.writeHead(201);
                     res.end("<h1>Grocery Item added to list!</h1>");
                 }else{

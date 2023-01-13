@@ -28,8 +28,9 @@ class GroceryItem  {
     // }
 
 }
+let GROCERY_ITEMS = []
 
 
-module.exports = GroceryItem
+module.exports = GROCERY_ITEMS
 
 

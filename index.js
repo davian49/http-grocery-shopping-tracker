@@ -3,8 +3,7 @@ const requests = require('./controller/requestHandler')
 const http = require('http');
 const PORT = 3000;
 
-item = new GroceryItem("bread", 1, 1.80)
-json =JSON.stringify(item)
+
 
 // const server = http.createServer()
 // http.createServer(function (req, res) {

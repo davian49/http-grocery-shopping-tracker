@@ -1,4 +1,4 @@
-const groceryItems = require('../model/groceryItem')
+const GROCERY_ITEMS = require('../model/groceryItem')
 const fs = require('fs');
 const path = './groceryList.json'
 
@@ -6,13 +6,17 @@ const path = './groceryList.json'
 // CRUD
 
 // CREATE
-const insertNewGroceryItem = (newGroceryItem) => {
-    fs.writeFileSync(path, JSON.stringify(newGroceryItem))
+function insertNewGroceryItem(newGroceryItem) {
+
+    // appends GroceryItem to list
+    GROCERY_ITEMS.push(newGroceryItem)
+    // converts back to JSON for database (groceryList.json)
+    fs.writeFileSync(path, JSON.stringify(GROCERY_ITEMS));
 }
 
 // READ
 const getItemByName = (itemName) => {
-    let item = groceryItems.filter((item) => item.name === itemName)[0];
+    let item = GROCERY_ITEMS.filter((item) => item.name === itemName)[0];
     if (item) {
         return item
     } else {
