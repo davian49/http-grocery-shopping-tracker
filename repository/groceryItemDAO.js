@@ -2,10 +2,13 @@ const GROCERY_ITEMS = require('../model/groceryItem')
 const fs = require('fs');
 const path = './groceryList.json'
 
-
 // CRUD
 
 // CREATE
+/**
+ * Inserts new GroceryItem to list. Creates new list if on does not exist
+ * @param {GroceryItem} newGroceryItem 
+ */
 function insertNewGroceryItem(newGroceryItem) {
 
     // appends GroceryItem to list
@@ -15,6 +18,11 @@ function insertNewGroceryItem(newGroceryItem) {
 }
 
 // READ
+/**
+ * Filters GroceryItem from list by name
+ * @param {GroceryItem} itemName 
+ * @returns GroceryItem with matching name, or null if GroceryItem does not exists
+ */
 const getItemByName = (itemName) => {
     let item = GROCERY_ITEMS.filter((item) => item.name === itemName)[0];
     if (item) {
@@ -23,7 +31,10 @@ const getItemByName = (itemName) => {
         return null
     }
 }
-
+/**
+ * Returns list of ALL GroceryItems
+ * @returns GroceryItem list
+ */
 const getGroceryItems = () => {
     list = fs.readFileSync(path, 'utf-8')
     groceryItemList = JSON.stringify(list)

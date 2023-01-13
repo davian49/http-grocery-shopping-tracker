@@ -69,6 +69,11 @@ const requestHandler = (req, res) => {
     }
 };
 
+/**
+ * Validates GroceryItem by name(length), quantity > 0 and price > 0
+ * @param {GroceryItem} groceryItem 
+ * @returns true is valid GroceryItem
+ */
 const validateNewGroceryItem = (groceryItem) => {
     return !(groceryItem.name.length <= 1 || groceryItem.quantity <= 0 || groceryItem.price <= 0)
 }
